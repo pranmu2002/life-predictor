@@ -8,3 +8,4 @@ pydantic[email]
 joblib
 scikit-learn
 reportlab
+python-multipart
