@@ -1,11 +1,11 @@
 fastapi
 uvicorn
-python-jose[cryptography]
-passlib[bcrypt]
 sqlalchemy
-pydantic
-pydantic[email]
+passlib[bcrypt]
+python-jose
 joblib
 scikit-learn
-reportlab
-python-multipart
+pandas
+numpy
+
+

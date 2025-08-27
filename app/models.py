@@ -1,20 +1,26 @@
+# models.py
 from sqlalchemy import Column, Integer, String, Boolean, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from .database import Base
 
 class User(Base):
     __tablename__ = "users"
-    id = Column(Integer, primary_key=True, index=True)
+
+    id = Column(Integer, primary_key=True, index=True)  # add id!
     name = Column(String, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
     is_admin = Column(Boolean, default=False)
-    submissions = relationship("Submission", back_populates="owner")
+
+    submissions = relationship("Submission", back_populates="owner", cascade="all, delete-orphan")
+
 
 class Submission(Base):
     __tablename__ = "submissions"
+
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+
     age = Column(Integer)
     bmi = Column(Float)
     smoker = Column(Boolean)
@@ -33,5 +39,7 @@ class Submission(Base):
     work_hours = Column(Integer)
     screen_time = Column(Integer)
     social_activity = Column(Integer)
+
     prediction = Column(String)
+
     owner = relationship("User", back_populates="submissions")
