@@ -18,7 +18,8 @@ app = FastAPI(title="Life Predictor API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # ✅ change to your Netlify domain in prod
+    allow_origins=["*", "http://localhost:5500", "http://127.0.0.1:5500", "https://lifepredictor.netlify.app"],
+          # ✅ change to your Netlify domain in prod
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],          # ✅ allows Authorization header
