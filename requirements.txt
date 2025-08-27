@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-jose[cryptography]
+passlib[bcrypt]
+sqlalchemy
+pydantic
+pydantic[email]
+joblib
+scikit-learn
+reportlab
