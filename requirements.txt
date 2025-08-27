@@ -7,5 +7,6 @@ joblib
 scikit-learn
 pandas
 numpy
+reportlab
 
 

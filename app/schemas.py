@@ -1,5 +1,4 @@
 from pydantic import BaseModel, EmailStr
-from typing import Optional
 
 class UserCreate(BaseModel):
     name: str
@@ -17,14 +16,14 @@ class UserResponse(BaseModel):
 class SubmissionCreate(BaseModel):
     age: int
     bmi: float
-    smoker: bool
+    smoker: int
     stress_level: int
-    chronic_disease: bool
-    diabetes: bool
+    chronic_disease: int
+    diabetes: int
     income_level: int
     bp_systolic: int
     bp_diastolic: int
-    vaccination_status: bool
+    vaccination_status: int
     pollution_index: int
     sleep_hours: float
     exercise_minutes: int
@@ -34,7 +33,7 @@ class SubmissionCreate(BaseModel):
     screen_time: int
     social_activity: int
 
-class SubmissionResponse(SubmissionCreate):
+class SubmissionResponse(BaseModel):
     id: int
     prediction: str
     class Config:
