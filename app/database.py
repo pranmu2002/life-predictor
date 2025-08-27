@@ -4,7 +4,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 # Get database URL from environment (Render can set DATABASE_URL)
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./life_predictor.db")
+SQLALCHEMY_DATABASE_URL = "sqlite:////var/data/life_predictor.db"
+
 
 # If using SQLite, need connect_args
 connect_args = {}
